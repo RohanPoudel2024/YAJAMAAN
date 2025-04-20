@@ -1,0 +1,341 @@
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 4; /* Ensure navbar is above other content */
+}
+
+/* Add this new style for the logo */
+.navbar-logo img {
+  width: 120px; /* Adjust this value to make the logo larger or smaller */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 1rem;
+}
+
+.navbar-links a,
+.dropbtn {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  line-height: 1.5; /* Ensure consistent line height */
+  transition: background-color 0.3s;
+}
+
+.navbar-links a:hover,
+.dropbtn:hover {
+  background-color: #f7fafc;
+  border-radius: 0.5rem;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f7fafc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #f56565;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e53e3e;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  padding: 0;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.3s all;
+  border-radius: 3px;
+}
+
+/* Hamburger animation */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+
+  /* Adjust logo size for mobile if needed */
+  .navbar-logo img {
+    width: 100px; /* Slightly smaller on mobile */
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    align-items: flex-start; /* Align items to the left */
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .navbar-links.open {
+    display: flex;
+    max-height: 1000px; /* A large value to ensure all content is visible */
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .navbar-links a,
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  .dropdown-content a {
+    padding: 0.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .navbar-links hr {
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+}
+
+/* Add these styles for authenticated functionality - keeping original color scheme */
+
+.user-welcome {
+  display: none;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 1px solid #f56565;
+  color: #f56565;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #f56565;
+  color: white;
+}
+
+/* Show welcome on larger screens */
+@media (min-width: 768px) {
+  .user-welcome {
+    display: block;
+  }
+}
+
+/* Add these styles for authenticated navbar */
+.navbar-authenticated {
+  background-color: #4a1e1e; /* Primary maroon color */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-authenticated .navbar-logo a {
+  color: white;
+}
+
+.navbar-authenticated .hamburger-line {
+  background-color: white;
+}
+
+.navbar-authenticated .navbar-links a,
+.navbar-authenticated .dropbtn {
+  color: white;
+}
+
+.navbar-authenticated .navbar-links a:hover,
+.navbar-authenticated .dropbtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-welcome {
+  display: none;
+  color: white;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 1px solid #f56565;
+  color: #f56565;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #f56565;
+  color: white;
+}
+
+/* Show welcome on larger screens */
+@media (min-width: 768px) {
+  .user-welcome {
+    display: block;
+  }
+  
+  .navbar-authenticated {
+    padding: 0.75rem 2rem;
+  }
+  
+  .navbar-authenticated .navbar-links a,
+  .navbar-authenticated .dropbtn {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Add these rules to fix text wrapping in navbar links */
+
+.navbar-links a,
+.navbar-links .dropbtn {
+  white-space: nowrap;
+  display: block;
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+/* If the header wraps on smaller screens, ensure there's enough width */
+@media (max-width: 768px) {
+  .navbar-links {
+    width: 100%;
+  }
+  
+  .navbar-links a,
+  .navbar-links .dropbtn,
+  .navbar-links button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.5rem;
+  }
+  
+  /* Ensure dropdown content also doesn't wrap */
+  .dropdown-content a {
+    white-space: nowrap;
+  }
+}
+
+/* For larger screens, ensure better spacing */
+@media (min-width: 769px) {
+  .navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-links a,
+  .navbar-links .dropbtn {
+    padding: 0.8rem 1.2rem;
+  }
+  
+  /* Give more room to fit all items */
+  .navbar {
+    padding: 0 1.5rem;
+  }
+}

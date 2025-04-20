@@ -1,0 +1,179 @@
+.auth-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #4a1e1e; /* Primary maroon color */
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .auth-navbar .navbar-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .auth-navbar .navbar-logo img {
+    width: 120px;
+    height: auto;
+  }
+  
+  .user-info {
+    display: none;
+  }
+  
+  .user-name {
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+  
+  .user-role {
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    text-transform: capitalize;
+  }
+  
+  .auth-navbar .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    padding: 0;
+  }
+  
+  .auth-navbar .hamburger-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s all;
+    border-radius: 3px;
+  }
+  
+  .auth-navbar .hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .auth-navbar .hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .auth-navbar .hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .auth-navbar .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #3a1818;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .auth-navbar .navbar-links.open {
+    display: flex;
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .auth-navbar .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .auth-navbar .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .auth-navbar .nav-item i {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+  }
+  
+  .auth-navbar .logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: transparent;
+    color: #f56565;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+  }
+  
+  .auth-navbar .logout-button:hover {
+    background-color: rgba(245, 101, 101, 0.1);
+  }
+  
+  .auth-navbar .logout-button i {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .auth-navbar {
+      padding: 0.75rem 2rem;
+    }
+    
+    .auth-navbar .navbar-header {
+      width: auto;
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+      margin-left: 2rem;
+    }
+    
+    .auth-navbar .hamburger {
+      display: none;
+    }
+    
+    .auth-navbar .navbar-links {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      max-height: none;
+      background-color: transparent;
+      width: auto;
+      overflow: visible;
+    }
+    
+    .auth-navbar .nav-item {
+      border-bottom: none;
+      padding: 0.75rem 1.5rem;
+    }
+    
+    .auth-navbar .logout-button {
+      width: auto;
+      border-top: none;
+      padding: 0.75rem 1.5rem;
+      margin-left: 1rem;
+    }
+  }

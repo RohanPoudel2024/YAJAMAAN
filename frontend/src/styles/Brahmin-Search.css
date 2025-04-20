@@ -1,0 +1,175 @@
+/* src/styles/BrahminSearch.css */
+.brahmin-search-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.search-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-header h1 {
+  color: #4a1e1e;
+  margin-bottom: 0.5rem;
+}
+
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #f8f3e7;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.filter-item {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-item label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4a1e1e;
+}
+
+.filter-item select,
+.filter-item input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.search-button {
+  background-color: #4a1e1e;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+
+.brahmins-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.brahmin-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+.brahmin-card:hover {
+  transform: translateY(-5px);
+}
+
+.brahmin-image {
+  height: 200px;
+  position: relative;
+}
+
+.brahmin-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.availability {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.brahmin-details {
+  padding: 1.5rem;
+}
+
+.brahmin-details h2 {
+  margin-top: 0;
+  color: #4a1e1e;
+  font-size: 1.3rem;
+}
+
+.rating {
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.specialization {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.spec-tag {
+  background-color: #f8f3e7;
+  color: #4a1e1e;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.experience, .languages, .price {
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.view-profile, .book-now {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.view-profile {
+  border: 1px solid #4a1e1e;
+  color: #4a1e1e;
+}
+
+.book-now {
+  background-color: #4a1e1e;
+  color: white;
+  border: none;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .brahmins-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-item {
+    min-width: 100%;
+  }
+}

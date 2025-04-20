@@ -1,0 +1,957 @@
+/* BrahminProfileView.module.css - Modern styled component for Brahmin profiles */
+
+/* Root Variables */
+:root {
+  --primary: #8b0000;
+  --primary-light: #a30000;
+  --primary-dark: #670000;
+  --primary-bg: #f8f0f0;
+  --accent-color: #f9c846;
+  --text-dark: #1f2937;
+  --text-medium: #4b5563;
+  --text-light: #6b7280;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --success: #2ecc71;
+  --warning: #e74c3c;
+  --gold: #FFD700;
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Container Layout */
+.brahminProfileView {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  background-color: var(--gray-50);
+}
+
+/* Back Navigation */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-medium);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.backLink:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.backLink i {
+  margin-right: 0.5rem;
+}
+
+/* Profile Hero Section */
+.profileHero {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-200);
+  border-bottom: none;
+  position: relative;
+}
+
+.profileMain {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  padding: 2rem;
+  position: relative;
+  align-items: start;
+}
+
+/* Profile Image */
+.profileImage {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  z-index: 2;
+}
+
+.profileImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.profileImage:hover img {
+  transform: scale(1.05);
+}
+
+/* Availability Badge */
+.availabilityBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: var(--shadow-sm);
+  z-index: 3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.available {
+  background-color: var(--success);
+}
+
+.limited {
+  background-color: var(--primary);
+}
+
+/* Profile Information */
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileInfo h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+}
+
+.profileMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+  gap: 0.5rem;
+}
+
+.metaItem i {
+  color: var(--primary);
+}
+
+/* Rating Display */
+.ratingInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.ratingValue {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.reviewsCount {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Specialization Tags */
+.specializationTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.tag {
+  background-color: var(--primary-bg);
+  color: var(--primary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.tag:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Price Range */
+.priceRange {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.priceRange i {
+  color: var(--primary);
+}
+
+/* Action Buttons */
+.profileActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.btn {
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.btn i {
+  font-size: 1.1rem;
+}
+
+.btnBook {
+  background-color: var(--primary);
+  color: var(--white);
+  flex: 2;
+}
+
+.btnBook:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btnSave, .btnContact {
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  flex: 1;
+}
+
+.btnSave:hover, .btnContact:hover {
+  background-color: var(--primary-bg);
+  transform: translateY(-2px);
+}
+
+/* Tabs Navigation */
+.profileTabs {
+  display: flex;
+  background-color: var(--white);
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--gray-200);
+}
+
+.tabBtn {
+  padding: 1.2rem 1rem;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  color: var(--text-medium);
+  transition: var(--transition);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.tabBtn i {
+  font-size: 1.1rem;
+}
+
+.active {
+  color: var(--primary);
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.tabBtn:hover:not(.active) {
+  color: var(--primary-dark);
+  background-color: rgba(0,0,0,0.02);
+}
+
+/* Content Section */
+.profileContent {
+  background-color: var(--white);
+  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 0;
+  border: 1px solid var(--gray-200);
+  border-top: none;
+  min-height: 400px;
+}
+
+/* About Section */
+.aboutSection, .ritualsSection, .reviewsSection, .availabilitySection {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bioSection {
+  margin-bottom: 2.5rem;
+}
+
+.bioSection h2, 
+.ritualsSection h2,
+.reviewsSection h2,
+.availabilitySection h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.bioSection h2::after, 
+.ritualsSection h2::after,
+.reviewsSection h2::after,
+.availabilitySection h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.sectionDescription {
+  color: var(--text-medium);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.detailsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.detailCard {
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid var(--gray-100);
+}
+
+.detailCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.detailCard h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detailCard h3 i {
+  color: var(--primary);
+}
+
+.detailCard p {
+  color: var(--text-medium);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.certificationsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.certificationsList li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--text-medium);
+}
+
+.certificationsList li:last-child {
+  border-bottom: none;
+}
+
+/* Rituals Section */
+.ritualsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ritualCard {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--white);
+}
+
+.ritualCard:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.ritualCard h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.ritualDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.ritualMeta {
+  flex-grow: 1;
+}
+
+.ritualMeta p {
+  margin: 0.5rem 0;
+  color: var(--text-medium);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ritualMeta i {
+  color: var(--primary);
+}
+
+.btnSm {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btnSm:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.customRequest {
+  background-color: var(--primary-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  border: 1px dashed var(--primary);
+}
+
+.customRequest h3 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.customRequest p {
+  margin-bottom: 1.5rem;
+  color: var(--text-medium);
+}
+
+.btnOutline {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btnOutline:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Reviews Section */
+.reviewsSummary {
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 2.5rem;
+  border-bottom: 1px solid var(--gray-200);
+  padding-bottom: 1.5rem;
+}
+
+.ratingSummary {
+  text-align: center;
+  min-width: 150px;
+}
+
+.largeRating {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.largeStars {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin: 0.5rem 0;
+}
+
+.ratingBreakdown {
+  flex: 1;
+}
+
+.ratingBar {
+  display: flex;
+  align-items: center;
+  margin: 0.6rem 0;
+}
+
+.ratingLabel {
+  width: 30px;
+  text-align: right;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  font-weight: 500;
+}
+
+.barContainer {
+  flex: 1;
+  background-color: var(--gray-200);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 0.5rem;
+}
+
+.bar {
+  height: 100%;
+  background-color: var(--gold);
+}
+
+.count {
+  width: 40px;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+}
+
+.reviewsList {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.reviewCard {
+  border-bottom: 1px solid var(--gray-200);
+  padding-bottom: 1.5rem;
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.reviewerInfo {
+  display: flex;
+  align-items: center;
+}
+
+.reviewerName {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-right: 0.75rem;
+}
+
+.reviewDate {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.reviewRating {
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.reviewText {
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+.noReviews {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-light);
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--gray-300);
+}
+
+/* Availability Section */
+.availabilityNote {
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.weeklySchedule {
+  margin-bottom: 2.5rem;
+}
+
+.weeklySchedule h3,
+.unavailableDates h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.weeklySchedule h3 i,
+.unavailableDates h3 i {
+  color: var(--primary);
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.daySchedule {
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  border: 1px solid var(--gray-100);
+  transition: var(--transition);
+}
+
+.daySchedule:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary);
+}
+
+.daySchedule h4 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.timeSlots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeSlot {
+  background-color: var(--white);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  border: 1px solid var(--gray-200);
+}
+
+.unavailableDates p {
+  color: var(--text-medium);
+  margin-bottom: 1rem;
+}
+
+.datesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.unavailableDate {
+  background-color: #fce8e8;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  color: var(--primary);
+  border: 1px solid #f3d9d9;
+}
+
+.bookingCta {
+  margin-top: 3rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-bg) 0%, #f5e9e9 100%);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.bookingCta h3 {
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  font-size: 1.3rem;
+}
+
+.btnBookLarge {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btnBookLarge:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1100px) {
+  .profileMain {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .profileImage {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .profileInfo {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .profileMeta,
+  .ratingInfo,
+  .specializationTags {
+    justify-content: center;
+  }
+  
+  .priceRange {
+    justify-content: center;
+  }
+  
+  .bioSection h2::after, 
+  .ritualsSection h2::after,
+  .reviewsSection h2::after,
+  .availabilitySection h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .bioSection h2, 
+  .ritualsSection h2,
+  .reviewsSection h2,
+  .availabilitySection h2 {
+    text-align: center;
+  }
+  
+  .sectionDescription {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profileTabs {
+    flex-wrap: wrap;
+  }
+  
+  .tabBtn {
+    flex: 1 0 50%;
+    padding: 1rem;
+    border: 1px solid var(--gray-200);
+  }
+  
+  .active::after {
+    display: none;
+  }
+  
+  .profileActions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .profileContent {
+    padding: 1.5rem;
+  }
+  
+  .reviewsSummary {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .ritualsList {
+    grid-template-columns: 1fr;
+  }
+  
+  .detailsSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .scheduleGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ritualDetails {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .btnSm {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .brahminProfileView {
+    padding: 1rem 1rem 3rem;
+  }
+  
+  .profileInfo h1 {
+    font-size: 1.8rem;
+  }
+  
+  .availabilityBadge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .profileHero, .profileContent {
+    border-radius: var(--border-radius);
+  }
+  
+  .profileContent {
+    padding: 1.25rem;
+  }
+  
+  .largeRating {
+    font-size: 2.5rem;
+  }
+  
+  .tabBtn {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .tabBtn i {
+    margin-right: 0;
+  }
+  
+  .datesList {
+    flex-direction: column;
+  }
+  
+  .unavailableDate {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .btnBookLarge {
+    width: 100%;
+    padding: 0.8rem;
+  }
+  
+  .reviewHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .detailCard, .ritualCard {
+    padding: 1.25rem;
+  }
+  
+  .backLink {
+    margin-bottom: 1rem;
+  }
+  
+  .profileMain {
+    padding: 1.5rem 1rem;
+  }
+  
+  .specialized Tags {
+    margin-bottom: 1rem;
+  }
+}

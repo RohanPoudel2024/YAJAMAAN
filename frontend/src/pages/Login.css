@@ -1,0 +1,155 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); /* Account for header and footer */
+  padding: 3rem 1rem;
+  background-color: #f7f9fc;
+}
+
+.login-container {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+}
+
+.login-page h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.75rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.login-page h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #f56565;
+  border-radius: 2px;
+}
+
+.login-page form > div {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.login-page label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+.login-page input[type="email"],
+.login-page input[type="password"] {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #e1e5eb;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.login-page input:focus {
+  outline: none;
+  border-color: #f56565;
+  box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.1);
+  background-color: white;
+}
+
+.login-page button {
+  width: 100%;
+  padding: 0.875rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f56565;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(245, 101, 101, 0.1);
+}
+
+.login-page button:hover {
+  background-color: #e53e3e;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(245, 101, 101, 0.2);
+}
+
+.login-page button:active {
+  transform: translateY(0);
+}
+
+.login-page .error {
+  color: #e53e3e;
+  background-color: rgba(245, 101, 101, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border-left: 3px solid #e53e3e;
+  text-align: left;
+}
+
+.login-page .signup-link {
+  display: block;
+  margin-top: 1.5rem;
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.login-page .signup-link:hover {
+  color: #f56565;
+}
+
+.login-page .forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #718096;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: color 0.3s;
+}
+
+.login-page .forgot-password:hover {
+  color: #f56565;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.75rem;
+  }
+  
+  .login-page h2 {
+    font-size: 1.5rem;
+  }
+  
+  .login-page input[type="email"],
+  .login-page input[type="password"] {
+    padding: 0.75rem;
+  }
+}
